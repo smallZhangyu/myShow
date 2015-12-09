@@ -10,8 +10,9 @@
 $toolbar-size: 52px; //toolbar's width
 
 .toolbar{
-  position:absolute;
-  right:-$toolbar-size - 20px;
+  position:fixed;
+  left:50%;
+  margin-left: 570px;
   bottom:20px;
 }
 .toolbar-item{
