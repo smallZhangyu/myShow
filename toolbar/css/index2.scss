@@ -22,21 +22,19 @@
 html,body{
   margin:0;
   padding:0;
-  height:100%;
 }
 .container{
   position:relative;
   width:1100px;
   margin:0 auto;
-  border:1px solid #f00;
-  height:100%;
 }
 
 $toolbar-size: 52px; //toolbar's width
 
 .toolbar{
-  position:absolute;
-  right:-$toolbar-size - 20px;
+  position:fixed;
+  left:50%;
+  margin-left: 570px;
   bottom:20px;
 }
 .toolbar-item{
