@@ -1,0 +1,287 @@
+@import "compass";
+@import "compass/reset";
+
+ul,li,dl,dt,dd,ol{
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+h3{
+  margin:0;
+}
+
+$wrap-width:1210px;
+$subMenu-width:210px;
+$subMenu-height:44px;
+.nav-2014{
+  border-bottom:2px solid #b1191a;
+  height:44px;
+  .wrap{
+    position: relative;
+    z-index: 10;
+    height:$subMenu-height;
+  }
+}
+.wrap{
+  width:$wrap-width;
+  margin:0 auto;
+}
+
+.clearfix{
+  clear:both;
+  overflow:visible;
+}
+
+.subMenu{
+  width:$subMenu-width;
+  float:left;
+  position: relative;
+  z-index: 10;
+  .subMenu-dt{
+    height:$subMenu-height;
+    background:#b1191a;
+    line-height: $subMenu-height;
+    padding:0 10px;
+    a{
+      display: block;
+      color:#fff;
+      font-size: 16px;
+      text-decoration: none;
+      i{
+        display:block;
+        position:absolute;
+        top:18px;
+        right:15px;
+        width:22px;
+        height:7px;
+        overflow:hidden;
+        transition: transform .5s;
+        color:#fff;
+        font:700 20px/16px simsun
+      }
+      s{
+        text-decoration: none;
+        position: relative;
+        top:-9px;
+      }
+    }
+  }
+  &.hover{
+    .subMenu-dt{
+      i{
+        transform:rotate(180deg);
+      }
+    }
+  }
+}
+.subMenu-index{
+  .subMenu-dt{
+    a{
+      i{
+        display:none;
+      }
+    }
+  }
+  .subMenu-dd{
+    display: block;
+  }
+  .subMenu-dd-inner{
+    height:310px;
+  }
+}
+
+.navMenu{
+  float:left;
+  height: $subMenu-height;
+}
+.navMenu-item{
+  @extend .clearfix;
+  margin:0;
+  padding:0;
+  height:$subMenu-height;
+  line-height: $subMenu-height;
+  li{
+    float:left;
+    display: inline;
+    a{
+      display: block;
+      padding:0 15px;
+      font-size: 16px;
+      color:#333;
+      text-decoration: none;
+      &:hover{
+        color:#b1191a;
+      }
+    }
+  }
+}
+//左侧菜单列
+.subMenu-dd{
+  display: none;
+  background:#c81623;
+//  height: 466px;
+  margin-top: 2px;
+}
+
+.subMenu-dd-inner{
+  overflow:hidden;
+  border-bottom: 1px solid #c81623;
+  li{
+    $subMenu-dd-li:31px;
+    height:$subMenu-dd-li;
+    border-left: 1px solid #c81623;
+    position: relative;
+    z-index: 1;
+    padding:0 10px;
+    font-size:14px;
+    font-weight: normal;
+    h3{
+      font-family: "microfost Yahei";
+      position: absolute;
+      height:$subMenu-dd-li;
+      line-height: $subMenu-dd-li;
+      color:#fff;
+      a{
+        color:#fff;
+        text-decoration: none;
+        margin-left: -2px;
+      }
+    }
+    i{
+      position: absolute;
+      right:10px;
+      width:10px;
+      height:$subMenu-dd-li;
+      line-height: $subMenu-dd-li;
+      text-align: center;
+      color:#fff;
+    }
+    &.hover{
+      background:#f7f7f7;
+      color:#b61d1d;
+      a{
+        color:#b61d1d;
+      }
+      i{
+        background:#f7f7f7;
+        right:-10px;
+        color:#f7f7f7;
+      }
+    }
+  }
+}
+//弹出层菜单
+.subMenu-layer{
+  border:1px solid #b61d1d;
+  background:#f7f7f7;
+  position: absolute;
+  top:45px;
+  left:209px;
+  width:999px;
+  min-height: 465px;
+  display:none;
+  li{
+    padding:20px 20px;
+    overflow: hidden;
+    @extend .clearfix;
+    display: none;
+  }
+}
+
+.subMenu-layer-menu{
+  width:790px;
+  float:left;
+  }
+.subMenu-layer-ad{
+  width:168px;
+  float:right;
+}
+.layer-menu-title{
+  height:24px;
+  line-height: 24px;
+  font-size:14px;
+  a{
+    color:#fff;
+    padding-left: 6px;
+    margin-right: 6px;
+    float:left;
+    background:#7c7171;
+    display: inline-block;
+    text-decoration: none;
+    i{
+      background:#5c5251;
+      display:inline-block;
+      width:24px;
+      height:24px;
+      text-align: center;
+      margin-left: 6px;
+    }
+  }
+}
+
+.layer-menu-dl{
+  margin-top: 10px;
+  dl{
+    @extend .clearfix;
+    overflow: hidden;
+    &:first-child{
+      dd{
+        border-top: none;
+      }
+    }
+  }
+  dt{
+    float:left;
+    width:54px;
+    height:24px;
+    padding:8px 30px 0 0;
+    text-align: right;
+    position: relative;
+    a{
+      text-decoration: none;
+      font-size:12px;
+      color:#666;
+      font-weight: bold;
+      text-align: right;
+      line-height: 24px;
+      i{
+        font-weight: normal;
+        display:inline-block;
+        position: absolute;
+        right:15px;
+      }
+    }
+  }
+  dd{
+    float:left;
+    width:620px;
+    padding: 5px 0;
+    border-top: 1px solid #ddd;
+    a{
+      display:inline-block;
+      padding:1px 10px;
+      margin:3px 0;
+      border-left: 1px solid #ddd;
+      text-decoration: none;
+      font-size: 12px;
+      line-height: 1.2;
+      color:#666;
+      &:hover{
+        color:#c81623;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
