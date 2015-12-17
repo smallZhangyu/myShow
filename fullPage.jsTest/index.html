@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="zh-CN">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.6/jquery.fullPage.css"/>
+    <!--<link rel="stylesheet" href="css/index.css"/>-->
+    <style>
+        body{color:#fff;}
+        /*.slide{
+            text-align: center;
+            font-size: 30px;}*/
+    </style>
+</head>
+<body>
+    <div id="fullpage">
+        <div class="section">
+            第一屏
+        </div>
+        <div class="section">
+            <div class="slide">slide1</div>
+            <div class="slide">slide2</div>
+            <div class="slide">slide3</div>
+            <div class="slide">slide4</div>
+        </div>
+        <div class="section">
+            第三屏
+        </div>
+        <div class="section">
+            第四屏
+        </div>
+    </div>
+
+
+
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.6/vendors/jquery.slimscroll.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.6/vendors/jquery.easings.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.7.6/jquery.fullPage.min.js"></script>
+    <script>
+        $('#fullpage').fullpage({
+            sectionsSelector:'section', // 全屏滚动页的选择器，默认为.section
+            slideSelector:'slide',  // 幻灯片的选择器，默认为.slide
+            sectionsColor:['cadetblue','cornflowerblue','dodgerblue','goldenrod'],   // 设置每个滚动页的背景色
+            controlArrows:true,// 是否使用箭头来控制slide幻灯片，默认true
+            verticalCentered:true,   //设置每一页的内容是否垂直居中，默认为true
+            resize:false,       //字体是否随窗口缩放而缩放，默认为false
+            scrollSpeed:700,    //滚动速度，单位为毫秒，默认为700
+            anchors:[],     //定义锚链接，默认值为[]，有了用户可以快速打开定位到某一页面，注意：值不要和页面中任意的id或name相同，定义时不要加#
+            lockAnchors:false,      //是否锁定锚链接，默认为false，如果设置为true，则设置的anchors属性效果失效
+            easing:'easeInOutCubic',   //定义页面section滚动的动画方式，默认为easeInOutCubic，如果修改，需要引入jquery.easings插件，或者jQuery ui
+            css3:true,      //是否使用CSS3 transforms来实现滚动，默认为true
+            loopTop:false,      //页面section滚动到最顶部后是否连续滚动到底部，默认为false
+            loopBottom:false,   //页面section滚动到最底部后是否连续滚动到顶部，默认为false
+            loopHorizontal:true,    //横向silder幻灯片是否循环滚动，默认为true
+            autoScrolling:true,     //是否使用插件的滚动方式，默认为true，如果选择false，则会出现浏览器自带的滚动条，将不会按页滚动，而是按照滚动条的默认行为来滚动。
+            scrollBar:false,        //是否包含滚动条，默认为false，如果设置为true，则浏览器自带的滚动条出现，页面滚动时还是按页滚动，但是滚动条的默认行为也有效
+            paddingTop:0,   //paddingTop/paddingBottom设置每一个section顶部和底部的padding，默认为0。一般如果我们需要设置一个固定在顶部或者底部的菜单、导航、元素等，可以使用这两个配置项。
+            fixedElements:null,     //固定的元素，默认为null，需要配置一个jQuery选择器。在页面滚动的时候，fixedElements设置的元素固定不动。
+            keyboardScrolling:true,     //是否可以使用键盘方向键导航，默认为true
+            touchSensitivity:5,     //在移动设备中滑动页面的敏感性，默认为5，是按百分比来衡量，最高为100，越大则越难滑动
+            continuousVertical:false,   //是否循环滚动，默认为false。如果为true，则页面会循环滚动，而不像loopTop或loopBottom那样出现跳动，注意这个属性和loopTop、loopBottom不兼容，不要同时设置
+            animateAnchor:true,     //锚链接是否可以控制滚动动画，默认为true。如果设置为false，则通过锚链接定位到摸个页面显示不再有动画效果
+            recordHistory:true,     //是否记录历史，默认为true，可以记录页面滚动的历史，通过浏览器的前进后退来导航。注意如果设置了autoScrolling：false，那么这个配置也将被关闭，即设置为false。
+            menu:false,     //绑定菜单，设定的相关属性与anchors的值对应后，菜单可以控制滚动，默认为false。可以设置为菜单的jquery选择器。
+            navigation:false,       //是否显示导航，默认为false。如果设置为true，会显示小圆点，作为导航。
+            navigationPosition:'left',  //导航小圆点的位置，可以设置为left或者right
+            navigationTooltips:[],      //导航小圆点的tooltips设置，默认为[]，注意按照顺序设置
+            showActiveTooltip:false,        //是否显示当前页面的导航的tooltip信息，默认为false
+            slidesNavigation:false,     // 是否显示横向幻灯片的导航，默认值为：false
+            slidesNavPosition:'bottom',     // 横向幻灯片导航的位置，默认值为：bottom，（可选值：top bottom）
+            scrollOverflow:false    //内容超过满屏后是否显示滚动条，默认为false。如果设置为true，则会显示滚动条，如果要滚动查看内容，还需要jquery.silmscroll插件的配合。slimscroll插件主要用于模拟传统的浏览器滚动条。
+
+
+
+
+
+
+
+
+
+        });
+    </script>
+</body>

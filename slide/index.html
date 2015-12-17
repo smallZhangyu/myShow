@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>仿淘宝固定边栏</title>
+    <style>
+        *{
+            padding:0;margin:0 auto;
+        }
+        .wrap{
+            clear:both;
+            overflow:hidden;
+            width:1200px;
+            position: relative;
+        }
+        .main{
+            float:left;
+            width:903px;
+        }
+        .silde{
+            float:right;
+            width:283px;
+        }
+        footer{
+            width:100%;
+            height:300px;
+            background: cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="main">
+        <img src="images/main.png" width="903" height="1932" alt=""/>
+        <img src="images/main.png" width="903" height="1932" alt=""/>
+    </div>
+    <div class="silde" id="silde">
+        <!-- 长silde -->
+        <img src="images/silde.png" width="283" height="1605" alt=""/>
+        <img src="images/silde.png" width="283" height="1605" alt=""/>
+        <!-- 短silde -->
+        <!--<div style="width:95%;height:500px;border:1px solid #f00;"></div>-->
+    </div>
+</div>
+<footer></footer>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    /**
+     *  jQuery版
+     *
+     **/
+    $(document).ready(function(){
+       var $window=$(window);
+       var $silde=$('#silde');//
+       var winHeight=$window.height();//屏幕的高度
+       var sildeHeight=$silde.height();//右侧边栏silde的高度
+       var scrollTop=$window.scrollTop();//滚动条的高度
+       //var footerTop=$('footer').offset().top;//底部到屏幕顶部的距离
+       // console.log(footerTop);
+       $window.on('scroll',function(){
+          scrollTop=$window.scrollTop();
+
+          if( (winHeight+scrollTop) > sildeHeight){
+              $silde.css({
+                  'position': 'fixed',
+                  'left':'50%',
+                  'margin-left': '317px'
+              });
+              if(sildeHeight > winHeight){
+                $silde.css({
+                    'top':-(sildeHeight - winHeight)
+                });
+              }
+          }else{
+              $silde.css({
+                  'position':'static',
+                  'margin-left':0
+              });
+          }
+       });
+       // 重载页面
+       window.onload=function(){
+          $window.trigger('scroll');
+       };
+       // 收缩页面
+       $window.resize(function(){
+          $window.trigger('scroll');
+       });
+    });
+
+
+    /**
+     *  原生js版
+     *
+     *  */
+
+  /*  // 通过id获取页面元素
+    var $ = function(id){
+        return document.getElementById(id);
+    }
+    // 绑定事件
+    var addEvent = function(obj,event,fn){
+        if(obj.addEventListener){
+            obj.addEventListener(event,fn);
+        }else if(obj.attachEvent){
+            obj.attachEvent('on'+event,fn);
+        }
+    }
+
+    var $silde=$('silde');
+
+    var scrollEvent = function(){
+        var sildeHeight = $silde.clientHeight;//silde的高度
+        var screenHeight = document.documentElement.clientHeight || document.body.clientHeight;//屏幕的高度
+        var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;//滚动条高度
+
+        if(screenHeight+scrollTop > sildeHeight){
+            $silde.style.cssText='position:fixed;left:50%;margin-left:317px;top:0px;';
+            if(sildeHeight > screenHeight){
+                $silde.style.top=-(sildeHeight - screenHeight)+'px';
+            }
+        }else{
+            $silde.style.cssText='position:static;margin-left:6px;';
+        }
+    }
+    addEvent(window,'scroll',scrollEvent); // 滚动事件
+    addEvent(window,'resize',scrollEvent); // resize事件
+    addEvent(window,'load',scrollEvent);   // load事件*/
+</script>
+</body>
+</html>
