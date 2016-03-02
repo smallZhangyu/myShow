@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>多列效果，修改后</title>
+    <link rel='stylesheet' href='css/photoswipe.css'>
+    <link rel='stylesheet' href='css/default-skin.css'>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h2>画廊1:</h2>
+    <div class="my-gallery">
+        <figure>
+            <a href="images/001.jpg" data-size="1024x1024">
+                <img src="images/001.jpg" />
+            </a>
+            <figcaption itemprop="caption description">Image caption 1</figcaption>
+        </figure>
+        <figure>
+            <a href="images/002.jpg" data-size="1024x1024">
+                <img src="images/002.jpg" />
+            </a>
+            <figcaption itemprop="caption description">Image caption 1</figcaption>
+        </figure>
+        <figure>
+            <a href="images/003.jpg" data-size="1024x1024">
+                <img src="images/003.jpg" />
+            </a>
+            <figcaption>图片 3</figcaption>
+        </figure>
+    </div>
+
+    <h2>画廊2:</h2>
+    <div class="my-gallery">
+        <figure>
+            <a href="images/004.jpg" data-size="1024x1024">
+                <img src="images/004.jpg" />
+            </a>
+            <figcaption itemprop="caption description">Image caption 1</figcaption>
+        </figure>
+        <figure>
+            <a href="images/005.jpg" data-size="1024x1024">
+                <img src="images/005.jpg" />
+            </a>
+            <figcaption itemprop="caption description">Image caption 1</figcaption>
+        </figure>
+        <figure>
+            <a href="images/006.jpg" data-size="1024x1024">
+                <img src="images/006.jpg" />
+            </a>
+            <figcaption>图片 3</figcaption>
+        </figure>
+    </div>
+
+    <!-- 以下内容是PhotoSwipe插件不可或缺的页面结构，.pswp类不能修改 -->
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <!-- PhotoSwipe的背景，是一个单独的部分，能够更快的加载透明背景效果 -->
+        <div class="pswp__bg"></div>
+        <!-- 幻灯片Slides部分，超出部分隐藏 -->
+        <div class="pswp__scroll-wrap">
+            <!-- PhotoSwipe 只支持3个slides在DOM内存中 -->
+            <!-- 不要修改这3个pswp__item 元素,幻灯片在这里增加 -->
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+            <!-- 顶部区域的默认（PhotoSwipeUI_Default）接口，可修改 -->
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <!--  控制页面的按钮. 顺序可以修改 -->
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>  <!-- 关闭 -->
+                    <button class="pswp__button pswp__button--share" title="Share"></button>  <!-- 分享 -->
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>  <!-- 全屏幕 -->
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>  <!-- 缩放 -->
+                    <!-- Preloader 示例在 http://codepen.io/dimsemenov/pen/yyBWoR中查看 -->
+                    <!-- 当preloader运行时，元素将会激活 pswp__preloader 类 -->
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                            <div class="pswp__preloader__cut">
+                                <div class="pswp__preloader__donut"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">  <!-- 分享下拉内容 -->
+                    <div class="pswp__share-tooltip"></div>
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>  <!-- 左箭头 -->
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>  <!-- 右箭头 -->
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>  <!-- 幻灯片标题 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='js/photoswipe.min.js'></script>
+    <script src='js/photoswipe-ui-default.min.js'></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
