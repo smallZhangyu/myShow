@@ -1,0 +1,717 @@
+/*重置样式*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei";
+    behavior: url(ie-css3.htc);
+}
+ul,li{
+    list-style: none;
+}
+html,body{
+    width:100%;
+    height:100%;
+}
+.clearfix{
+    clear:both;
+    overflow:hidden;
+    zoom:1;
+}
+.left{
+    float:left;
+}
+.right{
+    float:right;
+}
+/*===================== PC端样式 ===================*/
+.pc{
+    display:none;
+}
+@media screen and (min-width:768px){
+    .pc{
+        display: block;
+    }
+    .mobile{
+        display: none;
+    }
+    .wrapper{
+        height:100%;
+        min-height: 700px;
+        position: relative;
+    }
+    /*nav*/
+    .nav{
+        width:420px;
+        *width:400px;
+        position: absolute;
+        top:0;
+        right:0;
+        margin: 19px 0 5px;
+        padding: 0 20px 0 0;
+    }
+    .nav li{
+        display:inline;
+        float:left;
+        padding:0 7px;
+    }
+    .nav li.more > a{
+        background:#3388FF;
+    }
+    .nav li.more a{
+        color:#fff;
+        text-decoration: none;
+        font-weight: normal;
+    }
+    .nav li a.normal{
+        font-weight: normal;
+    }
+    .nav a,.nav a:visited{
+        font-size:12px;
+        line-height:23px;
+        color:#333;
+        font-weight: bold;
+    }
+    .nav a:hover{
+        color:#00c;
+    }
+    /* 设置 */
+    .setLink{
+        position: relative;
+    }
+    .setLink:hover .setBolck{
+        display: block;
+    }
+    .setBolck{
+        display:none;
+        background:#fff;
+        position: absolute;
+        top:25px;
+        left:-15px;
+        z-index:100;
+        width:70px;
+        text-align: center;
+        border:1px solid #b2b2b2;
+        border-radius:2px;
+        box-shadow:1px 1px 5px #d1d1d1;
+    }
+    .setBolck i{
+        display: block;
+        width: 8px;
+        height: 5px;
+        position: absolute;
+        top:-4px;
+        left:50%;
+        margin-left:-4px;
+        background: url("../images/arrow_up.png") no-repeat;
+    }
+    .setBolck > a {
+        display: block;
+        font-size: 12px;
+        font-weight: normal;
+        height: 24px;
+        line-height: 24px;
+        text-decoration: none;
+        position: relative;
+        z-index: 10;
+    }
+    .setBolck > a:hover {
+        background: #3388FF;
+        color: #fff;
+    }
+    /* 更多产品 */
+    .more > a{
+        display: inline;
+        float:right;
+        width:60px;
+        height:23px;
+        line-height: 23px;
+        text-align: center;
+    }
+    .more:hover .moreLink{
+        display:block;
+    }
+    .moreLink{
+        display:none;
+        position:fixed;
+        top:0;
+        right:0;
+        z-index:100;
+        width:100px;
+        height:100%;
+        background: #f9f9f9;
+        border-left: 1px solid #e7e7e7;
+    }
+    .moreLink p,.moreLink a{
+        color:#555 !important;
+        display: block;
+        width:66px;
+        height:76px;
+        border-bottom: 1px solid #e7e7e7;
+        margin:0 auto;
+        text-align: center;
+    }
+    .moreLink p{
+        height:52px;
+        line-height: 52px;
+        font-size: 14px;
+    }
+    .moreLink a span{
+        display: block;
+        width:36px;
+        height:36px;
+        margin:15px auto 10px;
+        *margin-top:5px;
+        cursor:pointer;
+        background: url("../images/bdbri_icons_2e35e84b.png") repeat;
+    }
+    .moreLink a span.moreLinkImg_1{
+        width:40px;
+        background-position: -72px 0;
+    }
+    .moreLink a span.moreLinkImg_2{
+        background-position: -112px 0;
+    }
+    .moreLink a span.moreLinkImg_3{
+        background-position: -36px 0;
+    }
+    .moreLink a span.moreLinkImg_4{
+        background-position: -148px 0;
+    }
+    .moreLink a span.moreLinkImg_5{
+        background-position: -184px 0;
+    }
+    .moreLink a span.moreLinkImg_6{
+        background-position: -220px 0;
+    }
+    .moreLink a.allGoods{
+        width:100%;
+        border-bottom: none;
+        text-decoration: underline;
+        margin-top: 10px;
+    }
+    /*bd_Index*/
+    .bd_Index{
+        position:relative;
+        top:130px;
+        text-align: center;
+        font-size:14px;
+        color:#333;
+    }
+    .bd_Index h1 span{
+        display:none;
+    }
+    /* 搜索框 */
+    .bd_Index_form{
+        margin: 15px auto 0;
+        width:612px;
+        clear: both;
+        overflow: hidden;
+        _zoom:1;
+    }
+    .bd_Index_form span{
+        position: relative;
+        float:left;
+        display: inline;
+        border:1px solid #aaa;
+        border-right:none;
+        padding:5px;
+    }
+    .bd_Index_form span:hover {
+        border-color: #888;
+    }
+    .bd_Index_form span.focus
+    {
+        border-color:#3385FF;
+    }
+    .bd_Index_form span .photo{
+        background:url("../images/soutu_icons.png") no-repeat;
+        position: absolute;
+        top:10px;
+        right:10px;
+        display: block;
+        width:18px;
+        height:16px;
+        cursor: pointer;
+    }
+    .bd_Index_form span .photo:hover{
+        background-position: 0 -21px;
+    }
+    .bd_Index_form input{
+        border:none;
+        outline:0;
+        width:500px;
+        height:24px;
+        line-height: 24px;
+    }
+    .bd_Index_form button{
+        float:left;
+        border:none;
+        background:#3385FF;
+        width:100px;
+        height:36px;
+        *height:39px;
+        font-size: 16px;
+        color:#fff;
+        cursor:pointer;
+    }
+    .bd_Index_form button:hover{
+        background:#317ef3;
+    }
+
+    /*footer*/
+    footer{
+        position: absolute;
+        bottom: 20px;
+        left:auto;
+        width:100%;
+        height:100px;
+    }
+    .foot-wrap{
+        width:650px;
+        margin:0 auto;
+        text-align: center;
+        clear:both;
+        overflow: hidden;
+        _zoom:1;
+    }
+
+    .scanCode{
+        float:left;
+        display:inline;
+        width:277px;
+    }
+    .scanCodeWrap{
+        display:inline;
+        float:left;
+    }
+    .scanCodeWrap2{
+        float:right;
+    }
+    .scanCode_img,.scanCode_msg{
+        float:left;
+    }
+    .scanCode_img img{
+        vertical-align: top;
+    }
+    .scanCode_msg{
+        font-size:12px;
+        line-height:24px;
+        color:#999;
+        margin:8px 0 0 10px;
+    }
+    .scanCode_msg b{
+        color:#666;
+    }
+
+    .address{
+        display: inline;
+        float:right;
+        width:340px;
+        font-size:12px;
+        line-height:18px;
+        color:#999;
+        text-align: left;
+    }
+    .address a{
+        color:#999;
+    }
+    .about a{
+        float:right;
+        margin-right: 62px;
+    }
+    .about a:first-child{
+        margin-right: 0;
+    }
+    .icrlogo, .jgwablogo {
+        background: url("../images/bd_icon.png") no-repeat scroll 0 0;
+        display: inline;
+        float:left;
+        width: 14px;
+        height: 17px;
+        overflow: hidden;
+    }
+    .icrlogo{
+        float:right;
+        *margin-top: -20px;
+        background-position: 0 -17px;
+    }
+    .jgwablogo{
+        background-position: 0 0;
+        margin-right: 6px;
+    }
+}
+/*===================== 手机端样式 ===================*/
+
+@media screen and (max-width: 767px) {
+    body{
+        font-size:62.5%;
+    }
+    .mobile{
+        display:block;
+    }
+    /* 字体图标 */
+
+    @font-face {font-family: "iconfont";
+        src: url('../fonts/iconfont.eot?t=1459401547'); /* IE9*/
+        src: url('../fonts/iconfont.eot?t=1459401547#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url('../fonts/iconfont.woff?t=1459401547') format('woff'), /* chrome, firefox */
+        url('../fonts/iconfont.ttf?t=1459401547') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+        url('../fonts/iconfont.svg?t=1459401547#iconfont') format('svg'); /* iOS 4.1- */
+    }
+
+    .iconfont {
+        font-family:"iconfont" !important;
+        font-size:16px;
+        font-style:normal;
+        -webkit-font-smoothing: antialiased;
+        -webkit-text-stroke-width: 0.2px;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .icon-dianyingyuanicon:before { content: "\e621"; }
+    .icon-nuo:before { content: "\e602"; }
+    .icon-jiudian:before { content: "\e608"; }
+    .icon-waimai:before { content: "\f0039"; }
+    .icon-dache:before { content: "\e60f"; }
+    .icon-meishiicon:before { content: "\e624"; }
+    .icon-ktv:before { content: "\e65a"; }
+    .icon-chongzhi:before { content: "\e618"; }
+    .icon-feiji:before { content: "\e640"; }
+    .icon-gongjiao2:before { content: "\e607"; }
+    .icon-lvxing:before { content: "\e609"; }
+    .icon-guahao:before { content: "\e64f"; }
+    .icon-jingqumenpiao:before { content: "\e617"; }
+    .icon-yinxing:before { content: "\e6da"; }
+    .icon-gongjiaoxinxi:before { content: "\e70d"; }
+    .icon-xinwendongtai:before { content: "\e7f6"; }
+    .icon-cubanshuxiaoshuo:before { content: "\e7fd"; }
+    .icon-video:before { content: "\e620"; }
+    .icon-ditu:before { content: "\e618"; }
+    .icon-wangzhi01:before { content: "\e62d"; }
+    .icon-tupian:before { content: "\e6b8"; }
+    .icon-shequtieba01:before { content: "\e6df"; }
+    .icon-appdiqiu:before { content: "\e622"; }
+    .icon-gengduo:before { content: "\e8ff"; }
+    .icon-icon1:before { content: "\e627"; }
+    .icon-yonghu:before { content: "\e625"; }
+    .icon-huochepiao:before { content: "\3447"; }
+    .icon-yijianfankui:before { content: "\e605"; }
+    .icon-dingwei:before { content: "\e88b"; }
+    .icon-shenglvehao:before { content: "\e671"; }
+    .icon-jiantouxia:before { content: "\e6d7"; }
+
+
+    /* 字体图标·完 */
+    .container{
+        padding:10px 10px 0;
+        background: #eeeff0;
+    }
+    .mobile{
+
+    }
+    /* 头部 */
+    .weather{
+        width:40%;
+        min-width:155px;
+    }
+    .weather div{
+        float: left;
+    }
+    .iconfont{
+        color:#8c8c8c;
+    }
+    .weather-num{
+        font-size: 2rem;
+        color: #8c8c8c;
+        padding-left: 2px;
+        line-height: 1.4;
+    }
+    .weather-status{
+        position: relative;
+        padding: 0 2px 0 7px;
+    }
+    .weather-status p{
+        font-size:1.2rem;
+        color:#8c8c8c;
+        line-height: 13px;
+        height:13px;
+    }
+    .weather-status i{
+        position: absolute;
+        bottom: -2px;
+        left: 65px;
+        font-size: 1.2rem
+    }
+    .user .iconfont{
+        margin-right: 10px;
+    }
+    /* 正文 */
+    .logo{
+        margin: 35px auto 15px;
+        text-align:center;
+    }
+    /* 搜索 */
+    .bd_Index_form{
+        border:1px solid #949494;
+        border-bottom-color: #bcbcbc;
+        position: relative;
+        display: -moz-box;
+        display: -webkit-box;
+        display: box;
+        width: 100%;
+    }
+    .bd_Index_form.focus{
+        border-color:#3385FF;
+    }
+    .bd_Index_form input{
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        box-flex: 1;
+        display:block;
+        padding: 7px 42px 7px 6px;
+        height: 42px;
+        line-height: 28px;
+        border:none;
+        -webkit-appearance:none;
+    }
+    .bd_Index_form button{
+        background:#38f;
+        position: absolute;
+        top:-1px;
+        right:-1px;
+        width:82px;
+        height:44px;
+        border:none;
+        border-top: 1px solid #38f;
+        border-bottom: 1px solid #38f;
+        text-align: center;
+        line-height: 40px;
+        font-size:16px;
+        color:#fff;
+    }
+    /* 导航 */
+    .nav-list{
+        margin: 17px 0 14px;
+        overflow: hidden;
+        clear:both;
+        width:100%;
+        height:55px;
+    }
+    .nav-list li{
+        float:left;
+        display:block;
+        width:16.66666%;
+        text-align:center;
+    }
+    .nav-list li a{
+        display:block;
+        width:100%;
+        color:#8c8c8c;
+        font-size:14px;
+    }
+    .nav-list li .iconfont{
+        width:30px;
+        height:30px;
+        line-height: 30px;
+        font-size:22px;
+        color:#888;
+        margin:0 auto;
+        text-align:center;
+    }
+    .moreBtn .iconfont{
+        transform:rotate(90deg);
+        -webkit-transform:rotate(90deg);
+    }
+    .moreBtn .iconfont.top{
+        transform:rotate(-90deg);
+        -webkit-transform:rotate(-90deg);
+    }
+
+    /* 生活服务 */
+    .life-serve{
+        background:#fff;
+    }
+    .life-serve-title{
+        padding:5px 10px;
+        position: relative;
+    }
+    .life-serve-title h3{
+        font-size:15px;
+        color:#999;
+    }
+    .life-serve-title .iconfont{
+        position: absolute;
+        top:-5px;
+        right:5px;
+        font-size:30px;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+    .position{
+        padding:10px;
+        position: relative;
+    }
+    .position p{
+        font-size:14px;
+        color:#262626;
+    }
+    .positionBtn{
+        display:block;
+        position:absolute;
+        right:10px;
+        top:5px;
+        border:1px solid #ccc;
+        border-radius:3px;
+        padding:0 5px;
+        font-size:16px;
+        column-rule: #666666;
+    }
+    .serve-list{
+        width:100%;
+        height:145px;
+        margin-top: 10px;
+        clear:both;
+        overflow:hidden;
+    }
+    .serve-list li{
+        display:block;
+        width:25%;
+        float:left;
+        text-align: center;
+        margin-bottom: 8px;
+    }
+    .serve-list li a{
+        color:#8c8c8c;
+    }
+    .serve-list li p{
+        font-size:14px;
+        color:#444;
+    }
+    .serve-list li .iconfont{
+        width:42px;
+        height:42px;
+        border-radius:50%;
+        margin:0 auto;
+        color:#fff;
+        font-size:25px;
+        text-align:center;
+        line-height: 42px;
+    }
+    .icon-dianyingyuanicon{
+        background:#b493db;
+    }
+    .serve-list .icon-nuo{
+        background:#ff6fbf;
+    }
+    .icon-waimai{
+        background:#ff6b70;
+    }
+    .icon-dache{
+        background:#93a4b3;
+    }
+    .icon-jiudian{
+        background:#6f99de;
+    }
+    .icon-meishiicon{
+        background:#ffa868;
+    }
+    .icon-ktv{
+        background:#b493db;
+    }
+    .icon-chongzhi{
+        background:#ff6b70;
+    }
+    .icon-feiji{
+        background:#93a4b3;
+    }
+    .icon-huochepiao{
+        background:#79d3a7;
+    }
+    .icon-gongjiao2{
+        background:#b1cf6a;
+    }
+    .icon-gongjiaoxinxi{
+        background:#ffa868;
+    }
+    .icon-lvxing{
+        background:#75c5e6;
+    }
+    .icon-guahao{
+        background:#6f99de;
+    }
+    .icon-jingqumenpiao{
+        background:#75c5e6;
+    }
+    .icon-yinxing{
+        background:#70d0a1;
+    }
+
+    .allBtn{
+        display:block;
+        width:100%;
+        height:47px;
+        margin-top: 10px;
+        border-top: 1px solid #ccc;
+        line-height: 47px;
+        text-align: center;
+        font-size:16px;
+        color:#666;
+    }
+    .allBtn .iconfont{
+        display: inline-block;
+        font-size:14px;
+        color:#8c8c8c;
+    }
+    .allBtn.up .iconfont{
+        -moz-transform: rotate(180deg);
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+/* pre-footer */
+    .pre-footer{
+        margin-top: 10px;
+    }
+    .myCard{
+        display: block;
+        background:#fff;
+        width:100%;
+        height:45px;
+        text-align: center;
+        line-height: 45px;
+        font-size:1.5rem;
+        color:#555;
+    }
+/* footer */
+    footer{
+        padding:0 22px 25px;
+    }
+    footer p img{
+        vertical-align: -3px;
+    }
+    footer p a{
+        display: block;
+        width:100%;
+        margin-top: 5px;
+        font-size:12px;
+        color:#8c8c8c;
+        text-align: center;
+    }
+    footer p a.text-left{
+        text-align: left;
+        color:#666;
+        margin-bottom: 10px;
+    }
+    footer p a.feekback{
+        color:#666;
+    }
+    footer p a.feekback i{
+        margin-right: 5px;
+    }
+
+
+
+
+}
